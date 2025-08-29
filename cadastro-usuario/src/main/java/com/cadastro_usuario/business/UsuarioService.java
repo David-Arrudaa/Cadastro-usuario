@@ -21,7 +21,11 @@ public class UsuarioService {
         return repository.findByEmail(email).orElseThrow(
                 () -> new RuntimeException("Email não encontrado!")
         );
-
     }
+
+    public void deletaByEmail(String email){
+        repository.deleteByEmail(email);
+    }
+
 
 }
